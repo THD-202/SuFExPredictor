@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>产率预测系统</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .container { background: #f5f5f5; padding: 30px; border-radius: 10px; }
+        h1 { color: #333; text-align: center; }
+        .upload-box { border: 2px dashed #ccc; padding: 30px; text-align: center; margin: 20px 0; }
+        .btn { background: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 16px; }
+        .btn:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>化学反应产率预测</h1>
+        <p>上传包含反应数据的Excel文件进行预测</p>
+        
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <div class="upload-box">
+                <input type="file" name="file" id="fileInput" accept=".xlsx,.xls">
+                <p>拖放文件到这里或点击选择</p>
+            </div>
+            <button type="submit" class="btn">开始预测</button>
+        </form>
+        
+        <div id="message" style="margin-top:20px;"></div>
+    </div>
+
+    <script>
+        // 文件拖放功能
+        const dropArea = document.querySelector('.upload-box');
+        const fileInput = document.querySelector('#fileInput');
+        
+        dropArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropArea.style.borderColor = '#4CAF50';
+        });
+        
+        dropArea.addEventListener('dragleave', () => {
+            dropArea.style.borderColor = '#ccc';
+        });
+        
+        dropArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropArea.style.borderColor = '#ccc';
+            
+            if (e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                document.querySelector('#message').textContent = 
+                    `已选择文件: ${e.dataTransfer.files[0].name}`;
+            }
+        });
+        
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length) {
+                document.querySelector('#message').textContent = 
+                    `已选择文件: ${e.target.files[0].name}`;
+            }
+        });
+    </script>
+</body>
+</html>
