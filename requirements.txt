@@ -1,9 +1,0 @@
-flask
-joblib
-pandas
-numpy
-lightgbm
-rdkit
-werkzeug
-openpyxl
-gunicorn
