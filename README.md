@@ -21,14 +21,14 @@ pip install -r requirements.txt
 ## Quick Start
 
 # 1. Yield prediction 
-    Place your dataset into the `Dataset/Prediction/Yield/` directory, then
+    Place your dataset into the `SuFEx/Prediction/Yield/` directory, then
 ```sh
     cd SuFEx/Prediction/Yield
     python pre_yield.py
 ```
 
 # 2. Chemoselectivity prediction 
-    Place your dataset into the `Dataset/Prediction/Chemoselectivity/` directory, then
+    Place your dataset into the `SuFEx/Prediction/Chemoselectivity/` directory, then
 ```sh
     cd SuFEx/Prediction/Chemoselectivity
     python pre_Chemoselectivity.py
