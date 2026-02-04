@@ -8,11 +8,11 @@ We recommend using Conda to manage the virtual environment and dependencies.
 
 ```bash
 # Clone this repository
-git clone https://github.com/THD-202/SuFEx.git
+git clone https://github.com/THD-202/SuFExPredictor.git
 
 # Create and activate conda environment
-conda create --name SuFEx python=3.11.7
-conda activate SuFEx
+conda create --name SuFExPredictor python=3.11.7
+conda activate SuFExPredictor
 
 # Install dependencies
 pip install -r requirements.txt
@@ -21,16 +21,16 @@ pip install -r requirements.txt
 ## Quick Start
 
 ## 1. Yield prediction 
-Place your dataset into the `SuFEx/Prediction/Yield/` directory, then
+Place your dataset into the `SuFExPredictor/Prediction/Yield/` directory, then
 ```bash
-cd SuFEx/Prediction/Yield
+cd SuFExPredictor/Prediction/Yield
 python pre_yield.py
 ```
 
 ## 2. Chemoselectivity prediction 
-Place your dataset into the `SuFEx/Prediction/Chemoselectivity/` directory, then
+Place your dataset into the `SuFExPredictor/Prediction/Chemoselectivity/` directory, then
 ```bash
-cd SuFEx/Prediction/Chemoselectivity
+cd SuFExPredictor/Prediction/Chemoselectivity
 python pre_Chemoselectivity.py
 ```
 
