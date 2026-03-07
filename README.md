@@ -15,6 +15,7 @@ conda create --name SuFExPredictor python=3.11.7
 conda activate SuFExPredictor
 
 # Install dependencies
+cd SuFExPredictor
 pip install -r requirements.txt
 ```
 
